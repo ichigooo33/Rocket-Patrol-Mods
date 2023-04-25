@@ -63,7 +63,7 @@ class Play extends Phaser.Scene
             fontSize: "28px",
             backgroundColor: "#F3B141",
             color: "#843605",
-            align: "right",
+            align: "center",
             padding: {
                 top: 5,
                 bottom: 5,
@@ -78,7 +78,7 @@ class Play extends Phaser.Scene
             fontSize: "28px",
             backgroundColor: "#F3B141",
             color: "#843605",
-            align: "right",
+            align: "center",
             padding: {
                 top: 5,
                 bottom: 5,
@@ -90,11 +90,22 @@ class Play extends Phaser.Scene
         //GAME OVER flag
         this.gameOver = false;
 
-        //gameOver text
-        this.gameOverText_1 = this.add.text(game.config.width / 2, game.config.height / 2, "GAME OVER", scoreConfig).setOrigin(0.5);
-        this.gameOverText_2 = this.add.text(game.config.width / 2, game.config.height / 2 + 64, "Press (R) to Restart or ← for Menu", scoreConfig).setOrigin(0.5);
-        this.gameOverText_1.alpha = 0;
-        this.gameOverText_2.alpha = 0;
+        //display gameOver text
+        let gameOverTextConfig = {
+            fontFamily: "Courier",
+            fontSize: "28px",
+            backgroundColor: "#F3B141",
+            color: "#843605",
+            align: "center",
+            padding: {
+                top: 5,
+                bottom: 5,
+            }
+        }
+        this.gameOverText_1 = this.add.text(game.config.width / 2, game.config.height / 2, "GAME OVER", gameOverTextConfig).setOrigin(0.5);
+        this.gameOverText_2 = this.add.text(game.config.width / 2, game.config.height / 2 + 64, "Press (R) to Restart or ← for Menu", gameOverTextConfig).setOrigin(0.5);
+        this.gameOverText_1.alpha = 1;
+        this.gameOverText_2.alpha = 1;
 
         //60-second play clock
         scoreConfig.fixedWidth = 0;
